@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ics">#FF0099CC</color>
+    <color name="light_theme_text">#FF040404</color>
+    <color name="dark_theme_text">#FFFFFFFF</color>
+</resources>

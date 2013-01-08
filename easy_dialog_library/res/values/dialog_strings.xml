@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Frequently used dialog messages -->
+    <string name="please_wait">Please Wait&#8230;</string>
+
+    <!-- Frequenty used dialog button names -->
+    <string name="db_ok">OK</string>
+    <string name="db_okay">Okay</string>
+    <string name="db_close">Close</string>
+    <string name="db_cancel">Cancel</string>
+    <string name="db_exit">Exit</string>
+    <string name="db_accept">Accept</string>
+    <string name="db_apply">Apply</string>
+    <string name="db_continue">Continue</string>
+    <string name="db_login">Login</string>
+    <string name="db_quit">Quit</string>
+    <string name="db_no">No</string>
+    <string name="db_yes">Yes</string>
+    <string name="db_save">Save</string>
+
+</resources>

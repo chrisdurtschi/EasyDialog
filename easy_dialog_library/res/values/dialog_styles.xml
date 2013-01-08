@@ -1,0 +1,329 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ****************************** -->
+    <!-- *****   Default Dialog   ***** -->
+    <!-- ****************************** -->
+
+    <style name="DialogTitleDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/ics</item>
+    </style>
+
+    <style name="DialogIcon">
+        <item name="android:layout_width">34dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="DialogTitleProgress">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:indeterminateOnly">true</item>
+    </style>
+
+    <style name="ScrollableText">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:focusable">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="DialogTitleText" parent="@style/ScrollableText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingTop">3dp</item>
+    </style>
+
+    <style name="DialogSubtitle" parent="@style/ScrollableText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginTop">-4dp</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="DialogMessageText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DialogIndeterminateProgress">
+        <item name="android:layout_width">55dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:indeterminateOnly">true</item>
+    </style>
+
+    <style name="DialogProgressMessage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DialogHorizontalProgress">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:keepScreenOn">true</item>
+        <item name="android:progressDrawable">@drawable/progress_horizontal_holo_dark</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal_holo_dark</item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
+    <style name="DialogHorizontalProgressText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DialogHorizontalProgressMessage" parent="@style/ScrollableText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DialogWebView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignWithParentIfMissing">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layerType">software</item>
+    </style>
+
+    <style name="DialogGridView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignWithParentIfMissing">true</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:listSelector">@drawable/list_selector_holo_dark</item>
+    </style>
+
+    <style name="DialogListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:listSelector">@drawable/list_selector_holo_dark</item>
+        <item name="android:layout_alignWithParentIfMissing">true</item>
+        <item name="android:cacheColorHint">#00000000</item>
+    </style>
+
+    <style name="DialogEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:background">@drawable/edit_text_holo_dark</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="DialogCheckBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:button">@drawable/btn_check_holo_dark</item>
+    </style>
+
+    <style name="DialogButtonDividers">
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#FF6F6F6F</item>
+    </style>
+
+    <style name="DialogBottomButton">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:background">@drawable/list_selector_holo_dark</item>
+    </style>
+
+    <style name="DialogButtonDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">#FF6F6F6F</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_dark</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="dialogTitleText">@style/DialogTitleText</item>
+        <item name="dialogSubtitleText">@style/DialogSubtitle</item>
+        <item name="dialogIcon">@style/DialogIcon</item>
+        <item name="dialogTitleProgress">@style/DialogTitleProgress</item>
+        <item name="dialogTitleDivider">@style/DialogTitleDivider</item>
+        <item name="dialogMessageText">@style/DialogMessageText</item>
+        <item name="dialogProgress">@style/DialogIndeterminateProgress</item>
+        <item name="dialogProgressText">@style/DialogProgressMessage</item>
+        <item name="dialogHorizontalProgress">@style/DialogHorizontalProgress</item>
+        <item name="dialogHorizontalProgressText">@style/DialogHorizontalProgressText</item>
+        <item name="dialogHorizontalProgressMessage">@style/DialogHorizontalProgressMessage</item>
+        <item name="dialogWebView">@style/DialogWebView</item>
+        <item name="dialogListView">@style/DialogListView</item>
+        <item name="dialogGridView">@style/DialogGridView</item>
+        <item name="dialogEditText">@style/DialogEditText</item>
+        <item name="dialogCheckBox">@style/DialogCheckBox</item>
+        <item name="dialogButtonDivider">@style/DialogButtonDivider</item>
+        <item name="dialogButtonDividers">@style/DialogButtonDividers</item>
+        <item name="dialogButton">@style/DialogBottomButton</item>
+    </style>
+
+    <!-- ******************************* -->
+    <!-- *****  Holo Light Dialog  ***** -->
+    <!-- ******************************* -->
+
+    <style name="DialogTitleText.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogSubtitle.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogMessageText.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogProgressMessage.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogHorizontalProgress.Light">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal_holo_light</item>
+    </style>
+
+    <style name="DialogHorizontalProgressText.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogHorizontalProgressMessage.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogGridView.Light">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="DialogListView.Light">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="DialogEditText.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+        <item name="android:background">@drawable/edit_text_holo_light</item>
+    </style>
+
+    <style name="DialogCheckBox.Light">
+        <item name="android:button">@drawable/btn_check_holo_light</item>
+        <item name="android:textColor">@color/light_theme_text</item>
+    </style>
+
+    <style name="DialogButtonDividers.Light">
+        <item name="android:background">#FF6F6F6F</item>
+    </style>
+
+    <style name="DialogBottomButton.Light">
+        <item name="android:textColor">@color/light_theme_text</item>
+        <item name="android:background">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="DialogButtonDivider.Light">
+        <item name="android:background">#FF6F6F6F</item>
+    </style>
+
+    <style name="Theme.Dialog.Light">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_light</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverseDisableOnly</item>
+        <item name="dialogTitleText">@style/DialogTitleText.Light</item>
+        <item name="dialogSubtitleText">@style/DialogSubtitle.Light</item>
+        <item name="dialogMessageText">@style/DialogMessageText.Light</item>
+        <item name="dialogProgressText">@style/DialogProgressMessage.Light</item>
+        <item name="dialogHorizontalProgress">@style/DialogHorizontalProgress.Light</item>
+        <item name="dialogHorizontalProgressText">@style/DialogHorizontalProgressText.Light</item>
+        <item name="dialogHorizontalProgressMessage">@style/DialogHorizontalProgressMessage.Light</item>
+        <item name="dialogListView">@style/DialogListView.Light</item>
+        <item name="dialogGridView">@style/DialogGridView.Light</item>
+        <item name="dialogEditText">@style/DialogEditText.Light</item>
+        <item name="dialogCheckBox">@style/DialogCheckBox.Light</item>
+        <item name="dialogButtonDivider">@style/DialogButtonDivider.Light</item>
+        <item name="dialogButtonDividers">@style/DialogButtonDividers.Light</item>
+        <item name="dialogButton">@style/DialogBottomButton.Light</item>
+    </style>
+
+    <!-- ******************************** -->
+    <!-- *****   ICS Dialog Theme   ***** -->
+    <!-- ******************************** -->
+
+    <style name="DialogBottomButton.Transparent">
+        <item name="android:background">@drawable/btn_transparent</item>
+        <item name="android:textColor">@color/ics_text_button_dark_theme</item>
+    </style>
+
+    <style name="DialogBottomButton.Transparent.Light">
+        <item name="android:textColor">@color/ics_text_button_light_theme</item>
+    </style>
+
+    <style name="Theme.Dialog.ICS">
+        <item name="android:windowBackground">@drawable/dialog_bg_ics</item>
+        <item name="dialogButton">@style/DialogBottomButton.Transparent</item>
+    </style>
+
+    <style name="Theme.Dialog.Light.ICS">
+        <item name="dialogButton">@style/DialogBottomButton.Transparent</item>
+    </style>
+
+    <style name="Theme.Dialog.JB">
+        <item name="android:windowBackground">@drawable/dialog_bg_ics</item>
+    </style>
+
+</resources>
