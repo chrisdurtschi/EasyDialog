@@ -1,4 +1,13 @@
 #################
+## IntelliJ
+#################
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#################
 ## Eclipse
 #################
 
@@ -28,6 +37,9 @@ local.properties
 # PDT-specific
 .buildpath
 
+# Maven Build Artifacts
+easy_dialog_library/target/
+easy_dialog_example/target/
 
 #################
 ## Visual Studio
