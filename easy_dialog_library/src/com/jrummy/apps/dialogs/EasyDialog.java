@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -1509,8 +1510,11 @@ public class EasyDialog extends Dialog {
 		protected CompoundButton.OnCheckedChangeListener mOnCheckedChangeListener;
 
 		protected boolean mSetFastScrollEnabled;
-		protected int mListRowTheme = EasyDialogListAdapter.DARK_THEME;
-		protected int mListItemTextColor = -1;
+		protected int mListItemLayout;
+		protected int mListItemBackground;
+		protected int mListItemTextColor;
+		protected int mListItemCheckBoxDrawable;
+		protected int mListItemRadioButtonDrawable;
 		protected int mListStyle;
 		protected List<ListItem> mListItems;
 
@@ -1535,16 +1539,33 @@ public class EasyDialog extends Dialog {
 		protected DialogInterface.OnDismissListener mOnDismissListener;
 
 		public Builder(Context context) {
-			this(context, EasyDialog.THEME_HOLO);
+			this(context, 0);
 		}
 
 		public Builder(Context context, int themeId) {
+			TypedArray a = context.obtainStyledAttributes(null, R.styleable.EasyDialog, R.attr.dialogStyle, 0);
+			if (themeId == 0) {
+				themeId = a.getResourceId(R.styleable.EasyDialog_dialogStyle, THEME_HOLO);
+			}
+			mListItemLayout = a.getResourceId(
+					R.styleable.EasyDialog_dialogListItemLayout,
+					R.layout.dialog_list_item);
+			mListItemBackground = a.getResourceId(
+					R.styleable.EasyDialog_dialogListItemBackground,
+					R.drawable.gv_border_black);
+			mListItemTextColor = a.getColor(
+					R.styleable.EasyDialog_dialogListItemTextColor,
+					0xFFFFFFFF);
+			mListItemCheckBoxDrawable = a.getResourceId(
+					R.styleable.EasyDialog_dialogListItemCheckBoxDrawable,
+					R.drawable.btn_check_holo_dark);
+			mListItemRadioButtonDrawable = a.getResourceId(
+					R.styleable.EasyDialog_dialogListItemRadioButtonDrawable,
+					R.drawable.btn_radio_holo_dark);
+			a.recycle();
+
 			mContext = context;
 			mThemeId = themeId;
-			if (themeId == EasyDialog.THEME_HOLO_LIGHT
-					|| themeId == EasyDialog.THEME_ICS_LIGHT) {
-				mListRowTheme = EasyDialogListAdapter.LIGHT_THEME;
-			}
 		}
 
 		/**
@@ -2024,28 +2045,8 @@ public class EasyDialog extends Dialog {
 		}
 
 		/**
-		 * Sets the theme for the list row.
-		 * This can't be set from styles since it's not part of the dialog.
-		 * <br><br>Must be one of:
-		 * <ul>
-		 * <li>{@link EasyDialogListAdapter#LIGHT_THEME}</li>
-		 * <li>{@link EasyDialogListAdapter#DARK_THEME} (default)</li>
-		 * <ul>
-		 * <br>
-		 *
-		 * @param theme
-		 * @return Builder object to allow for chaining of calls to set methods
-		 */
-		public Builder setListRowTheme(int theme) {
-			if (theme == EasyDialogListAdapter.DARK_THEME || theme == EasyDialogListAdapter.LIGHT_THEME) {
-				this.mListRowTheme = theme;
-			}
-			return this;
-		}
-
-		/**
 		 * Sets the text color of the items in the {@link EasyDialogListAdapter}
-		 * 
+		 *
 		 * @param color
 		 * @return Builder object to allow for chaining of calls to set methods
 		 */

@@ -17,6 +17,11 @@
         <item name="dialogHorizontalProgressMessage">@style/DialogHorizontalProgressMessage</item>
         <item name="dialogWebView">@style/DialogWebView</item>
         <item name="dialogListView">@style/DialogListView</item>
+        <item name="dialogListItemLayout">@layout/dialog_list_item</item>
+        <item name="dialogListItemBackground">@drawable/gv_border_black</item>
+        <item name="dialogListItemTextColor">#FFFFFFFF</item>
+        <item name="dialogListItemCheckBoxDrawable">@drawable/btn_check_holo_dark</item>
+        <item name="dialogListItemRadioButtonDrawable">@drawable/btn_radio_holo_dark</item>
         <item name="dialogGridView">@style/DialogGridView</item>
         <item name="dialogEditText">@style/DialogEditText</item>
         <item name="dialogCheckBox">@style/DialogCheckBox</item>
@@ -42,6 +47,11 @@
         <item name="dialogHorizontalProgressMessage">@style/DialogHorizontalProgressMessage.Light</item>
         <item name="dialogWebView">@style/DialogWebView</item>
         <item name="dialogListView">@style/DialogListView.Light</item>
+        <item name="dialogListItemLayout">@layout/dialog_list_item</item>
+        <item name="dialogListItemBackground">@drawable/gv_border_light</item>
+        <item name="dialogListItemTextColor">#FF040404</item>
+        <item name="dialogListItemCheckBoxDrawable">@drawable/btn_check_holo_light</item>
+        <item name="dialogListItemRadioButtonDrawable">@drawable/btn_radio_holo_light</item>
         <item name="dialogGridView">@style/DialogGridView.Light</item>
         <item name="dialogEditText">@style/DialogEditText.Light</item>
         <item name="dialogCheckBox">@style/DialogCheckBox.Light</item>

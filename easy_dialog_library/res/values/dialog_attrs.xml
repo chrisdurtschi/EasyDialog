@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="dialogTitleText" format="reference" />
-    <attr name="dialogSubtitleText" format="reference" />
-    <attr name="dialogIcon" format="reference" />
-    <attr name="dialogTitleProgress" format="reference" />
-    <attr name="dialogTitleDivider" format="reference" />
-    <attr name="dialogMessageText" format="reference" />
-    <attr name="dialogProgress" format="reference" />
-    <attr name="dialogProgressText" format="reference" />
-    <attr name="dialogHorizontalProgress" format="reference" />
-    <attr name="dialogHorizontalProgressText" format="reference" />
-    <attr name="dialogHorizontalProgressMessage" format="reference" />
-    <attr name="dialogWebView" format="reference" />
-    <attr name="dialogListView" format="reference" />
-    <attr name="dialogGridView" format="reference" />
-    <attr name="dialogEditText" format="reference" />
-    <attr name="dialogCheckBox" format="reference" />
-    <attr name="dialogButtonDivider" format="reference" />
-    <attr name="dialogButtonDividers" format="reference" />
-    <attr name="dialogButton" format="reference" />
+    <declare-styleable name="EasyDialog">
+        <attr name="dialogStyle" format="reference"/>
+        <attr name="dialogTitleText" format="reference"/>
+        <attr name="dialogSubtitleText" format="reference"/>
+        <attr name="dialogIcon" format="reference"/>
+        <attr name="dialogTitleProgress" format="reference"/>
+        <attr name="dialogTitleDivider" format="reference"/>
+        <attr name="dialogMessageText" format="reference"/>
+        <attr name="dialogProgress" format="reference"/>
+        <attr name="dialogProgressText" format="reference"/>
+        <attr name="dialogHorizontalProgress" format="reference"/>
+        <attr name="dialogHorizontalProgressText" format="reference"/>
+        <attr name="dialogHorizontalProgressMessage" format="reference"/>
+        <attr name="dialogWebView" format="reference"/>
+        <attr name="dialogListView" format="reference"/>
+        <attr name="dialogListItemLayout" format="reference"/>
+        <attr name="dialogListItemBackground" format="reference"/>
+        <attr name="dialogListItemTextColor" format="color"/>
+        <attr name="dialogListItemCheckBoxDrawable" format="reference"/>
+        <attr name="dialogListItemRadioButtonDrawable" format="reference"/>
+        <attr name="dialogGridView" format="reference"/>
+        <attr name="dialogEditText" format="reference"/>
+        <attr name="dialogCheckBox" format="reference"/>
+        <attr name="dialogButtonDivider" format="reference"/>
+        <attr name="dialogButtonDividers" format="reference"/>
+        <attr name="dialogButton" format="reference"/>
+    </declare-styleable>
 </resources>

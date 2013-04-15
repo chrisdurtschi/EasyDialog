@@ -19,23 +19,26 @@ import com.jrummy.apps.R;
 
 public class EasyDialogListAdapter extends BaseAdapter {
 
-	public static final int LIGHT_THEME = 0x01;
-	public static final int DARK_THEME = 0x02;
-
 	private List<EasyDialog.ListItem> mListItems;
 	private LayoutInflater mInflater;
 
+	private int mLayout = R.layout.dialog_list_item;
+	private int mBackground = R.drawable.gv_border_black;
+	private int mTextColor = 0xFFFFFFFF;
+	private int mCheckBoxDrawable = R.drawable.btn_check_holo_dark;
+	private int mRadioButtonDrawable = R.drawable.btn_radio_holo_dark;
 	private int mListStyle;
-	private int mRowTheme;
-	private int mTextColor = -1;
 	private Typeface mTypeface;
 
 	public EasyDialogListAdapter(EasyDialog.Builder builder) {
 		mInflater = LayoutInflater.from(builder.mContext);
 		mListItems = builder.mListItems;
-		mListStyle = builder.mListStyle;
-		mRowTheme = builder.mListRowTheme;
+		mLayout = builder.mListItemLayout;
+		mBackground = builder.mListItemBackground;
 		mTextColor = builder.mListItemTextColor;
+		mCheckBoxDrawable = builder.mListItemCheckBoxDrawable;
+		mRadioButtonDrawable = builder.mListItemRadioButtonDrawable;
+		mListStyle = builder.mListStyle;
 		mTypeface = builder.mMainFont;
 	}
 
@@ -43,7 +46,6 @@ public class EasyDialogListAdapter extends BaseAdapter {
 		mInflater = LayoutInflater.from(context);
 		mListItems = listItems;
 		mListStyle = listStyle;
-		mRowTheme = DARK_THEME;
 	}
 
 	public List<EasyDialog.ListItem> getListItems() {
@@ -94,7 +96,7 @@ public class EasyDialogListAdapter extends BaseAdapter {
 		final ViewHolder viewHolder;
 
 		if (convertView == null) {
-			viewHolder = new ViewHolder();
+			viewHolder = new ViewHolder(parent);
 			convertView = viewHolder.mConvertView;
 			convertView.setTag(viewHolder);
 		} else {
@@ -114,8 +116,8 @@ public class EasyDialogListAdapter extends BaseAdapter {
 		private CheckBox mCheckBox;
 		private RadioButton mRadioButton;
 
-		public ViewHolder() {
-			mConvertView = mInflater.inflate(R.layout.dialog_list_item, null, false);
+		public ViewHolder(ViewGroup parent) {
+			mConvertView = mInflater.inflate(mLayout, parent, false);
 			mIcon        = (ImageView)   mConvertView.findViewById(R.id.icon       );
 			mLabel       = (TextView)    mConvertView.findViewById(R.id.label      );
 			mSubLabel    = (TextView)    mConvertView.findViewById(R.id.sublabel   );
@@ -125,11 +127,7 @@ public class EasyDialogListAdapter extends BaseAdapter {
 
 		private void setBackground() {
 			if (mListStyle == EasyDialog.LIST_STYLE_GRIDVIEW) {
-				if (mRowTheme == LIGHT_THEME) {
-					mConvertView.setBackgroundResource(R.drawable.gv_border_light);
-				} else {
-					mConvertView.setBackgroundResource(R.drawable.gv_border_black);
-				}
+				mConvertView.setBackgroundResource(mBackground);
 			} else {
 				mConvertView.setBackgroundColor(Color.TRANSPARENT);
 			}
@@ -202,27 +200,17 @@ public class EasyDialogListAdapter extends BaseAdapter {
 		}
 
 		private void setTheme(EasyDialog.ListItem item) {
-			int textColor;
-			if (mRowTheme == LIGHT_THEME) {
-				mCheckBox.setButtonDrawable(R.drawable.btn_check_holo_light);
-				mRadioButton.setButtonDrawable(R.drawable.btn_radio_holo_light);
-				textColor = 0xFF040404;
-			} else {
-				textColor = 0xFFFFFFFF;
-			}
-
-			if (mTextColor != -1) {
-				textColor = mTextColor;
-			}
+			mCheckBox.setButtonDrawable(mCheckBoxDrawable);
+			mRadioButton.setButtonDrawable(mRadioButtonDrawable);
 
 			if (item.labelColor == -1) {
-				mLabel.setTextColor(textColor);
+				mLabel.setTextColor(mTextColor);
 			} else {
 				mLabel.setTextColor(item.labelColor);
 			}
 
 			if (item.labelColor == -1) {
-				mSubLabel.setTextColor(textColor);
+				mSubLabel.setTextColor(mTextColor);
 			} else {
 				mSubLabel.setTextColor(item.subLabelColor);
 			}
